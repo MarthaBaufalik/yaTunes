@@ -38,6 +38,7 @@ export const radioPlayerInit = () => {
     const changeValue = () => {                         //регулятор громкости 
       const valueVolume = radioVolume.value;
       audio.volume = valueVolume / 100;
+      //audio.muted = false;
       };
 
     radioNavigation.addEventListener('change', event => {
@@ -75,6 +76,10 @@ export const radioPlayerInit = () => {
       else audio.volume = localStorage.getItem('valueVolume');
     });
 
+    // radioVolumeOff.addEventListener('click', () => {
+    //   audio.muted = !audio.muted;
+    // });
+
     radioVolumeUp.addEventListener('click', () => {
       if (radioVolume.value < 100) {
         radioVolume.value = Number(radioVolume.value) + Number(radioVolume.step);
@@ -92,7 +97,11 @@ export const radioPlayerInit = () => {
   audio.addEventListener('volumechange', () => {
   radioVolume.value = Math.round(audio.volume * 100);
   });
-  changeValue();
-};
 
-//Добавить регулятор громкости!!!!
+  changeValue();
+
+  radioPlayerInit.stop = () => {
+    audio.pause();
+    changeIconPlay();
+  }
+};

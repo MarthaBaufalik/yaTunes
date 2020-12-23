@@ -107,6 +107,11 @@ videoPlayer.addEventListener('volumechange', () => {
 });
 
 changeValue();
+
+videoPlayerInit.stop = () => {
+  videoPlayer.pause();
+  toggleIcon();
+}
 };
 
 export default videoPlayerInit;
