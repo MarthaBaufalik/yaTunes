@@ -14,6 +14,7 @@ const deactivationPlayer = () => {
 
   radioPlayerInit.stop();
   videoPlayerInit.stop();
+  musicPlayerInit.stop();
 };
 
 playerBtn.forEach((btn, i) => btn.addEventListener('click', () => {

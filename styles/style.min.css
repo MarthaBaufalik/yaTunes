@@ -663,9 +663,13 @@ input.radio-volume {
   width: 100px;
   margin-right: 5px;
 }
+input.audio-volume {
+  margin-right: 5px;
+}
 .video-icon,
-.radio-icon {
-  margin-right: 10px;
+.radio-icon,
+.audio-icon {
+  margin-right: 5px;
   cursor: pointer;
 }
 .video-fullscreen {
@@ -677,11 +681,15 @@ input.radio-volume {
 .radio-stop {
   margin-left: auto;
 }
-.radio-volume-group {
+.radio-volume-group,
+.audio-volume-group {
   width: 49%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+.audio-volume-group {
+  width: 15%;
 }
 
 /*# sourceMappingURL=style.min.css.map */ ;
